@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="text-center">Goles por jugador</div>
+  <div class="d-flex justify-content-center my-3">
+    <igx-legend orientation="Horizontal" name="Legend" #legend> </igx-legend>
+  </div>
+  <div class="d-flex justify-content-center">
+    <igx-data-chart [legend]="legend" name="chart" #chart class="grafico">
+      <igx-category-y-axis
+        [dataSource]="datos"
+        gap="0.5"
+        overlap="-0.1"
+        isInverted="true"
+        enhancedIntervalPreferMoreCategoryLabels="false"
+        label="jugador"
+        name="yAxis"
+        #yAxis
+      >
+      </igx-category-y-axis>
+      <igx-numeric-x-axis title="Cantidad Goles" name="xAxis" #xAxis>
+      </igx-numeric-x-axis>
+      <igx-category-item-highlight-layer
+        name="categoryHighlightLayer"
+        #categoryHighlightLayer
+      >
+      </igx-category-item-highlight-layer>
+      <igx-bar-series
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        valueMemberPath="goles"
+        isTransitionInEnabled="true"
+        [dataSource]="datos"
+        isHighlightingEnabled="true"
+        showDefaultTooltip="true"
+        title="Goles totales"
+        name="barSeries1"
+        #barSeries1
+      >
+      </igx-bar-series>
+      <igx-bar-series
+        valueMemberPath="golestemporada"
+        [dataSource]="datos"
+        showDefaultTooltip="true"
+        isTransitionInEnabled="true"
+        isHighlightingEnabled="true"
+        [xAxis]="xAxis"
+        [yAxis]="yAxis"
+        title="Goles temporada"
+        name="barSeries2"
+        #barSeries2
+      >
+      </igx-bar-series>
+      <igx-item-tool-tip-layer name="tooltips" #tooltips>
+      </igx-item-tool-tip-layer>
+    </igx-data-chart>
+  </div>
+</div>

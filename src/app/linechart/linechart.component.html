@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="text-center">Codobeses, Portenos y Santafesinos de 2015-2019</div>
+  <div class="d-flex justify-content-center">
+    <igx-legend orientation="Horizontal" name="legend" #legend> </igx-legend>
+  </div>
+  <div class="d-flex justify-content-center">
+    <igx-category-chart
+      chartType="Line"
+      yAxisLabelLeftMargin="0"
+      yAxisTitleLeftMargin="10"
+      yAxisTitleRightMargin="5"
+      yAxisTitle="Cantidad de personas"
+      [dataSource]="datos"
+      includedProperties="year, cordoba, buenosAires, santaFe"
+      [legend]="legend"
+      isHorizontalZoomEnabled="false"
+      isVerticalZoomEnabled="false"
+      computedPlotAreaMarginMode="Series"
+      name="chart"
+      #chart
+      class="grafico"
+    >
+    </igx-category-chart>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="text-center">Usuarios segun Red Social</div>
+  <div class="d-flex justify-content-center">
+    <igx-legend orientation="Horizontal" name="Legend" #legend></igx-legend>
+  </div>
+  <div class="d-flex justify-content-center">
+    <igx-category-chart
+      chartType="Column"
+      xAxisInterval="1"
+      isCategoryHighlightingEnabled="true"
+      yAxisLabelLeftMargin="0"
+      yAxisTitleLeftMargin="10"
+      yAxisTitleRightMargin="5"
+      yAxisTitle="Cantidad Usuarios"
+      [dataSource]="datos"
+      [legend]="legend"
+      isHorizontalZoomEnabled="false"
+      isVerticalZoomEnabled="false"
+      crosshairsDisplayMode="None"
+      name="chart"
+      #chart
+      class="grafico"
+    >
+    </igx-category-chart>
+  </div>
+</div>
